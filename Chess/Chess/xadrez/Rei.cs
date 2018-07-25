@@ -86,7 +86,7 @@ namespace xadrez
                 mat[pos.linha, pos.coluna] = true;
 
             }
-            return mat;
+                return mat;
         }
     }
 }

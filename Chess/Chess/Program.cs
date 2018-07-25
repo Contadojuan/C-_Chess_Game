@@ -17,27 +17,28 @@ namespace Chess
                 PartidaDeXadrez partida = new PartidaDeXadrez();
                 while (!partida.terminada)
                 {
-                    try { 
-                    Console.Clear();
+                    try
+                    {
+                        Console.Clear();
                         Tela.imprimirPartida(partida);
 
 
-                    Console.WriteLine();
-                    Console.Write("Origem: ");
-                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
-                    partida.validarPosicaoDeOrigem(origem);
+                        Console.WriteLine();
+                        Console.Write("Origem: ");
+                        Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                        partida.validarPosicaoDeOrigem(origem);
 
-                    bool[,] posicaoPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+                        bool[,] posicaoPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
-                    Console.Clear();
-                    Tela.imprimirTabuleiro(partida.tab, posicaoPossiveis);
+                        Console.Clear();
+                        Tela.imprimirTabuleiro(partida.tab, posicaoPossiveis);
 
-                    Console.WriteLine();
-                    Console.Write("Destino: ");
-                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+                        Console.WriteLine();
+                        Console.Write("Destino: ");
+                        Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDestino(origem, destino);
 
-                    partida.realizaJogada(origem, destino);
+                        partida.realizaJogada(origem, destino);
                     }
                     catch (TabuleiroException e)
                     {
